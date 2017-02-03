@@ -10,7 +10,7 @@ resource "aws_iam_user" "admins" {
 resource "aws_iam_group_membership" "admins" {
   name       = "admins"
   users      = "${var.admins}"
-  group      = "${aws_iam_group.admins.name}"
+  group      = "${aws_iam_group.super_admins.name}"
   depends_on = ["aws_iam_user.admins"]
 }
 
